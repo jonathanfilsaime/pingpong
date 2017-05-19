@@ -1,0 +1,39 @@
+a:visited {color:#000000;}  /* visited link */
+a:hover {color:#000000;}  /* mouse over link */
+a:active {color:#000000;}  /* selected link */
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-titles {
+    display: block;
+    text-align: center;
+}
+
+.nav-title {
+    display: block;
+    font-size: 1.35em;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link {
+    text-align: center;
+    text-decoration: none;
+}
+
+@media (min-width: 769px) {
+
+}
+
+@media (min-width: 1025px) {
+
+}
