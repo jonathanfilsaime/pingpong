@@ -4,7 +4,7 @@ class AddPlayer extends Component {
     render() {
         return (
             <div>
-                Add a player
+
             </div>
         )
     }

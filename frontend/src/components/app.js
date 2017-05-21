@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import Toolbar from './toolbar';
+import Banner from './banner';
 import Leaderboard from './leaderboard';
 import AddTeam from './add_team';
 import AddPlayer from './add_player';
@@ -16,6 +17,7 @@ export default class App extends Component {
         <BrowserRouter>
             <div>
                 <Toolbar/>
+                <Banner />
                 <Switch>
                     <Route path="/addPlayer" component={AddPlayer} />
                     <Route path="/addTeam" component={AddTeam} />

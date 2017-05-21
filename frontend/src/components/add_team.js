@@ -4,7 +4,7 @@ class AddTeam extends Component {
     render() {
         return (
             <div>
-                Add a team
+
             </div>
         )
     }
