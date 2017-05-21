@@ -5,7 +5,7 @@
     color: #ffffff;
     background: #3acec2;
     padding: 1.5em;
-    margin-bottom: 48px;
+    margin: 25px 0;
 }
 
 .banner-title {
@@ -16,4 +16,14 @@
 .logo {
     width: 200px;
     height: auto;
+}
+
+@media (min-width: 769px) {
+
+}
+
+@media (min-width: 1025px) {
+    .banner {
+        margin: 0;
+    }
 }

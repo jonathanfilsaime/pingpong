@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
-    renderRows() {
-        return this.props.teamLeaderboard.map( (team) => {
-            console.log(team);
+    renderRows(board) {
+        return this.props[board].map( (team) => {
             return (
                 <tr key={team.name}>
                     <td>{team.name}</td>
@@ -22,13 +21,26 @@ class Leaderboard extends Component {
                 <div className="team-leaderboard">
                     <table>
                         <thead>
+                            <tr>
+                                <th>Team</th>
+                                <th>Wins</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {this.renderRows('teamLeaderboard')}
+                        </tbody>
+                    </table>
+                </div>
+                <div className="player-leaderboard">
+                    <table>
+                        <thead>
                         <tr>
-                            <th>Name</th>
-                            <th># of wins</th>
+                            <th>Player</th>
+                            <th>Wins</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {this.renderRows()}
+                        {this.renderRows('playerLeaderboard')}
                         </tbody>
                     </table>
                 </div>
@@ -39,7 +51,8 @@ class Leaderboard extends Component {
 
 function mapStateToProps(state){
     return {
-        teamLeaderboard: state.teamLeaderboard
+        teamLeaderboard: state.teamLeaderboard,
+        playerLeaderboard: state.playerLeaderboard
     }
 }
 

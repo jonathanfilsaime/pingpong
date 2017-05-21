@@ -1,17 +1,52 @@
 table {
     table-layout: fixed;
-    width: 75%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
 }
 
 td, th {
     padding: 0.5rem;
-    text-align: center;
+    border-bottom: 1px solid #000000;
+}
+
+thead {
+    background-color: #125B84;
+    color: #ffffff;
+}
+
+thead th:nth-child(1) {
+    width: 70%;
+}
+
+thead th:nth-child(2) {
+    width: 30%;
+}
+
+tbody > tr:hover {
+    cursor: pointer;
+    background-color: #dcdcdc
 }
 
 .leaderboard {
     display: flex;
     flex-direction: column;
+}
+
+.team-leaderboard, .player-leaderboard {
+    margin: 15px 0;
+}
+
+@media (min-width: 769px) {
+
+}
+
+@media (min-width: 1025px) {
+    .leaderboard {
+        flex-direction: row;
+        padding: 15px 0px;
+    }
 }
 
