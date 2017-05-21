@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import Toolbar from './toolbar';
 import Banner from './banner';
-import Leaderboard from './leaderboard';
+import Leaderboard from '../containers/leaderboard';
 import AddTeam from './add_team';
 import AddPlayer from './add_player';
 
@@ -15,7 +15,7 @@ export default class App extends Component {
     return (
       <div>
         <BrowserRouter>
-            <div>
+            <div className="app">
                 <Toolbar/>
                 <Banner />
                 <Switch>
