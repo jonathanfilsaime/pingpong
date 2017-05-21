@@ -5,9 +5,9 @@ import '../../style/banner.css';
 class Banner extends Component {
     parseURL() {
         switch(window.location.pathname) {
-            case "/": return "Leaderboard"; break;
-            case "/addPlayer": return "Add a player"; break;
-            case "/addTeam": return "Add a team"; break;
+            case "/": return "LEADERBOARD"; break;
+            case "/addPlayer": return "ADD A PLAYER"; break;
+            case "/addTeam": return "ADD A TEAM"; break;
             default: return "";
         }
     }
