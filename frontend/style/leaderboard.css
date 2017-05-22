@@ -26,7 +26,6 @@ thead th:nth-child(2) {
 }
 
 tbody > tr:hover {
-    cursor: pointer;
     background-color: #dcdcdc
 }
 

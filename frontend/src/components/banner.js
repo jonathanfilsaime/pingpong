@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import '../../style/banner.css';
 
 class Banner extends Component {
+    // TODO move this title to state
     parseURL() {
         switch(window.location.pathname) {
             case "/": return "LEADERBOARD"; break;

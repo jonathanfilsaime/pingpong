@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
-    renderRows(board) {
-        return this.props[board].map( (team) => {
+    renderRows(leaderboard_data) {
+        return leaderboard_data.map( (team) => {
             return (
                 <tr key={team.name}>
                     <td>{team.name}</td>
@@ -15,34 +15,35 @@ class Leaderboard extends Component {
         })
     }
 
+    renderTable(leaderboard, column_titles) {
+        return (
+            <table>
+                <thead>
+                <tr>
+                    {this.renderColumnHeadings(column_titles)}
+                </tr>
+                </thead>
+                <tbody>
+                {this.renderRows(leaderboard)}
+                </tbody>
+            </table>
+        )
+    }
+
+    renderColumnHeadings(column_titles) {
+        return column_titles.map((title) => {
+            return ( <th key={title}>{title}</th> );
+        })
+    }
+
     render() {
         return (
             <div className="leaderboard">
                 <div className="team-leaderboard">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Team</th>
-                                <th>Wins</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {this.renderRows('teamLeaderboard')}
-                        </tbody>
-                    </table>
+                    {this.renderTable(this.props.teamLeaderboard, ['Team', 'Wins'])}
                 </div>
                 <div className="player-leaderboard">
-                    <table>
-                        <thead>
-                        <tr>
-                            <th>Player</th>
-                            <th>Wins</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {this.renderRows('playerLeaderboard')}
-                        </tbody>
-                    </table>
+                    {this.renderTable(this.props.playerLeaderboard, ['Player', 'Wins'])}
                 </div>
             </div>
         );
