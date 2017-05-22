@@ -4,17 +4,6 @@ import { connect } from 'react-redux';
 import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
-    renderRows(leaderboard_data) {
-        return leaderboard_data.map( (team) => {
-            return (
-                <tr key={team.name}>
-                    <td>{team.name}</td>
-                    <td>{team.wins}</td>
-                </tr>
-            )
-        })
-    }
-
     renderTable(leaderboard, column_titles) {
         return (
             <table>
@@ -24,7 +13,7 @@ class Leaderboard extends Component {
                 </tr>
                 </thead>
                 <tbody>
-                {this.renderRows(leaderboard)}
+                    {this.renderRows(leaderboard)}
                 </tbody>
             </table>
         )
@@ -32,7 +21,20 @@ class Leaderboard extends Component {
 
     renderColumnHeadings(column_titles) {
         return column_titles.map((title) => {
-            return ( <th key={title}>{title}</th> );
+            return (
+                <th key={title}> {title} </th>
+            );
+        })
+    }
+
+    renderRows(leaderboard_data) {
+        return leaderboard_data.map( (team) => {
+            return (
+                <tr key={team.name}>
+                    <td>{team.name}</td>
+                    <td>{team.wins}</td>
+                </tr>
+            )
         })
     }
 
