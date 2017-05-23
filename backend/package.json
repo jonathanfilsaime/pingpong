@@ -4,7 +4,8 @@
   "description": "leaderboard",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jonathanfilsaime/pingpong/issues"
   },
-  "homepage": "https://github.com/jonathanfilsaime/pingpong#readme"
+  "homepage": "https://github.com/jonathanfilsaime/pingpong#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
