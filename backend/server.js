@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var readSingles = require('./db_readSingles')
-var readSingles = require('./db_readDoubles')
+var readDoubles = require('./db_readDoubles')
 var app = express();
 
 app.get('/', function (req, res)
@@ -13,13 +13,13 @@ app.get('/', function (req, res)
 
 app.get('/readSingles', function(req, res)
     {
-        readSingles();
+        readSingles(function (result){res.send(result)});
     }
 )
 
 app.get('/readDoubles', function(req, res)
     {
-        readSingles();
+        readDoubles(function (result){res.send(result)});
     }
 )
 
