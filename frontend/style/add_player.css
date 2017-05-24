@@ -1,0 +1,44 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    height: 50px;
+    width: 40vh;
+    font-size: 1.5em;
+    text-align: center;
+
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #3acec2;
+
+    text-transform: uppercase;
+}
+
+input:focus {
+
+}
+
+.add-player-input {
+    align-self: center;
+    margin: 15px;
+}
+
+.submit-button {
+    align-self: center;
+
+    font-size: 1.5em;
+
+    border: 2px solid #125B84;
+    border-radius: 6px;
+
+    background-color: #ffffff;
+    color: #125B84;
+}
+
+.submit-button:hover {
+    background-color: #125B84;
+    color: #ffffff;
+}

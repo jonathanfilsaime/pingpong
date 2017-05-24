@@ -18,15 +18,24 @@ thead {
 }
 
 thead th:nth-child(1) {
-    width: 70%;
+    width: 60%;
 }
 
 thead th:nth-child(2) {
     width: 30%;
 }
 
+thead th:nth-child(3) {
+    width: 10%;
+}
+
+tr:nth-child(2) {
+    background-color: #dcdcdc;
+}
+
 tbody > tr:hover {
-    background-color: #dcdcdc
+    background-color: #3acec2;
+    color: #ffffff;
 }
 
 .leaderboard {
