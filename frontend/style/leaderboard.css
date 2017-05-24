@@ -19,6 +19,10 @@ button:hover {
     color: #ffffff
 }
 
+button:focus {
+    outline: none;
+}
+
 td, th {
     padding: 0.5rem 0;
     border-bottom: 1px solid #000000;
@@ -34,11 +38,11 @@ thead th:nth-child(1) {
 }
 
 thead th:nth-child(2) {
-    width: 15%;
+    width: 12%;
 }
 
 thead th:nth-child(3) {
-    width: 5%;
+    width: 8%;
 }
 
 tr:nth-child(2) {
