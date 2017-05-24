@@ -2,27 +2,46 @@
  * Created by jonathanfilsaime on 5/22/2017.
  */
 var express = require('express');
-var readSingles = require('./db_readSingles')
-var readDoubles = require('./db_readDoubles')
-var test = require('./test')
 var app = express();
+var readAllSingles = require('./db_readAllSingles')
+var readAllDoubles = require('./db_readAllDoubles')
+var createSingleUser = require('./createSingleUser')
+var createDoubleUser = require('./createDoubleUser')
+
+var test = require('./test')
+var bodyParser = require('body-parser');
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+app.post('/createSingleUser', function(req, res)
+{
+    var name = req.body.name;
+    console.log(name);
+    createSingleUser(function (result){res.send(result)}, name)
+})
+
+app.post('/createDoubleUser', function(req, res)
+{
+    var name = req.body.name;
+    console.log(name);
+    createDoubleUser(function (result){res.send(result)}, name)
+})
 
 app.get('/', function (req, res)
 {
     res.send('Hello World')
 });
 
-app.get('/readSingles', function(req, res)
+app.get('/readAllSingles', function(req, res)
     {
-        readSingles(function (result){res.send(result)});
-    }
-)
+        readAllSingles(function (result){res.send(result)});
+    });
 
-app.get('/readDoubles', function(req, res)
+app.get('/readAllDoubles', function(req, res)
     {
-        readDoubles(function (result){res.send(result)});
-    }
-)
+        readAllDoubles(function (result){res.send(result)});
+    });
+
 
 app.get('/test/:name', function(req, res)
 {

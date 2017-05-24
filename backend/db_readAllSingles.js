@@ -4,7 +4,7 @@ module.exports = function read(callback)
 {
     connection.getConnection(function (err, connection)
     {
-        connection.query('SELECT * FROM singles', function (error, results)
+        connection.query('SELECT * FROM singles ORDER BY Wins DESC', function (error, results)
         {
             if (error) throw error;
             callback(results);
