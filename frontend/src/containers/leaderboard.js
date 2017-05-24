@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { getPlayerLeaderboard, getTeamLeaderboard } from '../actions/getLeaderboards';
+
 import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
+    componentDidMount(){
+        this.props.getPlayerLeaderboard();
+        this.props.getTeamLeaderboard();
+    }
+
     renderTable(leaderboard, column_titles) {
         return (
             <table>
@@ -33,6 +40,7 @@ class Leaderboard extends Component {
                 <tr key={team.name}>
                     <td>{team.name}</td>
                     <td>{team.wins}</td>
+                    <td><button>+</button></td>
                 </tr>
             )
         })
@@ -42,10 +50,10 @@ class Leaderboard extends Component {
         return (
             <div className="leaderboard">
                 <div className="team-leaderboard">
-                    {this.renderTable(this.props.teamLeaderboard, ['Team', 'Wins'])}
+                    {this.renderTable(this.props.teamLeaderboard, ['Team', 'Wins', ''])}
                 </div>
                 <div className="player-leaderboard">
-                    {this.renderTable(this.props.playerLeaderboard, ['Player', 'Wins'])}
+                    {this.renderTable(this.props.playerLeaderboard, ['Player', 'Wins', ''])}
                 </div>
             </div>
         );
@@ -59,4 +67,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps)(Leaderboard);
+export default connect(mapStateToProps, {getPlayerLeaderboard, getTeamLeaderboard})(Leaderboard);
