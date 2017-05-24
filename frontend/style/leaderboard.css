@@ -7,8 +7,20 @@ table {
     text-align: center;
 }
 
+button {
+    padding: 3px 4px 3px 4px;
+    border: 0px;
+    font-size: 1.2em;
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: #3acec2;
+    color: #ffffff
+}
+
 td, th {
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     border-bottom: 1px solid #000000;
 }
 
@@ -18,15 +30,15 @@ thead {
 }
 
 thead th:nth-child(1) {
-    width: 60%;
+    width: 80%;
 }
 
 thead th:nth-child(2) {
-    width: 30%;
+    width: 15%;
 }
 
 thead th:nth-child(3) {
-    width: 10%;
+    width: 5%;
 }
 
 tr:nth-child(2) {
