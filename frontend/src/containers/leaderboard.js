@@ -36,7 +36,7 @@ class Leaderboard extends Component {
     }
 
     renderRows(leaderboard_data) {
-        leaderboard_data = [{Name: "Kendall", Wins: 5}];
+        console.log(leaderboard_data);
         if(leaderboard_data.length === 0){
             return (
                 <tr><td>Couldn't retrieve data</td><td>-</td><td></td></tr>
