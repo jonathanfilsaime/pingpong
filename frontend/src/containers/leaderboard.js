@@ -8,8 +8,8 @@ import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
     componentDidMount(){
-        // this.props.getPlayerLeaderboard();
-        // this.props.getTeamLeaderboard();
+        this.props.getPlayerLeaderboard();
+        this.props.getTeamLeaderboard();
     }
 
     renderTable(leaderboard, column_titles) {
@@ -36,7 +36,7 @@ class Leaderboard extends Component {
     }
 
     renderRows(leaderboard_data) {
-        leaderboard_data = [{Name: "Kendall", Wins: 5}];
+        console.log(leaderboard_data);
         if(leaderboard_data.length === 0){
             return (
                 <tr><td>Couldn't retrieve data</td><td>-</td><td></td></tr>
@@ -48,7 +48,7 @@ class Leaderboard extends Component {
                         <td>{team.Name}</td>
                         <td>{team.Wins}</td>
                         <td>
-                            <button onClick={this.props.addWin} className="leaderboard-button">+</button>
+                            <button onClick={this.props.addWin(this.props.Name, this.props.Wins)} className="leaderboard-button">+</button>
                         </td>
                     </tr>
                 )

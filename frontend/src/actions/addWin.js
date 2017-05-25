@@ -3,10 +3,13 @@ import { ADD_WIN } from './index';
 
 import {getPlayerLeaderboard, getTeamLeaderboard} from './getLeaderboards';
 
-//TODO add redux thunk
-export function addWin() {
+export function addWin(name, wins) {
     return(dispatch, getState) => {
-        const request = axios.get(`http://localhost:3000/`);
+        const request = axios.post('http://localhost:3000/',
+            {
+                name: name,
+                wins: wins
+            });
 
         request.then((result) => {
             dispatch(getPlayerLeaderboard());
