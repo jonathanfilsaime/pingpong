@@ -8,8 +8,8 @@ import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
     componentDidMount(){
-        // this.props.getPlayerLeaderboard();
-        // this.props.getTeamLeaderboard();
+        this.props.getPlayerLeaderboard();
+        this.props.getTeamLeaderboard();
     }
 
     renderTable(leaderboard, column_titles) {
@@ -48,7 +48,7 @@ class Leaderboard extends Component {
                         <td>{team.Name}</td>
                         <td>{team.Wins}</td>
                         <td>
-                            <button onClick={this.props.addWin} className="leaderboard-button">+</button>
+                            <button onClick={this.props.addWin(this.props.Name, this.props.Wins)} className="leaderboard-button">+</button>
                         </td>
                     </tr>
                 )
