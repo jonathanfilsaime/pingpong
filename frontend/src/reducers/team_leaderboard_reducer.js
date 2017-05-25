@@ -1,10 +1,6 @@
 import { GET_TEAM_LEADERBOARD } from '../actions/index';
 
-const INITIAL_STATE = [
-        { name: "Jon", wins: 15},
-        { name: "Kendall", wins: 6},
-        { name: "Austin", wins: 25}
-    ];
+const INITIAL_STATE = [];
 
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {

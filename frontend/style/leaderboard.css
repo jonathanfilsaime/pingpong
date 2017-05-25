@@ -7,11 +7,11 @@ table {
     text-align: center;
 }
 
-button {
-    padding: 3px 4px 3px 4px;
+.leaderboard-button {
     border: 0px;
     font-size: 1.2em;
     background-color: transparent;
+    width: 100%;
 }
 
 button:hover {

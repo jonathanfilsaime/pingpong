@@ -17,10 +17,6 @@ input{
     text-transform: uppercase;
 }
 
-input:focus {
-
-}
-
 .add-player-input {
     align-self: center;
     margin: 15px;
@@ -29,6 +25,7 @@ input:focus {
 .submit-button {
     align-self: center;
 
+    width: 15vh;
     font-size: 1.5em;
 
     border: 2px solid #125B84;

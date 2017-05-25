@@ -1,10 +1,12 @@
 import axios from 'axios';
 
+import { ADD_TEAM } from './index';
+
 export function addTeam(values){
-    const request = axios.get(`localhost:3000/addPlayer/${values.team_name}`);
+    const request = axios.get('http://localhost:3000/createDoubleUser');
 
     return {
-        type: '',
+        type: ADD_TEAM,
         payload: request
     }
 }

@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getPlayerLeaderboard, getTeamLeaderboard } from '../actions/getLeaderboards';
+import { addWin } from '../actions/addWin';
 
 import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
     componentDidMount(){
-        this.props.getPlayerLeaderboard();
-        this.props.getTeamLeaderboard();
+        // this.props.getPlayerLeaderboard();
+        // this.props.getTeamLeaderboard();
     }
 
     renderTable(leaderboard, column_titles) {
@@ -35,15 +36,24 @@ class Leaderboard extends Component {
     }
 
     renderRows(leaderboard_data) {
-        return leaderboard_data.map( (team) => {
+        leaderboard_data = [{Name: "Kendall", Wins: 5}];
+        if(leaderboard_data.length === 0){
             return (
-                <tr key={team.name}>
-                    <td>{team.name}</td>
-                    <td>{team.wins}</td>
-                    <td><button>+</button></td>
-                </tr>
-            )
-        })
+                <tr><td>Couldn't retrieve data</td><td>-</td><td></td></tr>
+            );
+        } else {
+            return leaderboard_data.map((team) => {
+                return (
+                    <tr key={team.Name}>
+                        <td>{team.Name}</td>
+                        <td>{team.Wins}</td>
+                        <td>
+                            <button onClick={this.props.addWin} className="leaderboard-button">+</button>
+                        </td>
+                    </tr>
+                )
+            })
+        }
     }
 
     render() {
@@ -67,4 +77,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {getPlayerLeaderboard, getTeamLeaderboard})(Leaderboard);
+export default connect(mapStateToProps, {getPlayerLeaderboard, getTeamLeaderboard, addWin})(Leaderboard);
