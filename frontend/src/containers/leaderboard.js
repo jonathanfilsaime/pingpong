@@ -48,7 +48,7 @@ class Leaderboard extends Component {
                         <td>{team.Name}</td>
                         <td>{team.Wins}</td>
                         <td>
-                            <button onClick={this.props.addWin(this.props.Name, this.props.Wins)} className="leaderboard-button">+</button>
+                            <button  className="leaderboard-button">+</button>
                         </td>
                     </tr>
                 )

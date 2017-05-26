@@ -7,6 +7,7 @@ module.exports = function read(callback)
         connection.query('SELECT * FROM singles ORDER BY Wins DESC', function (error, results)
         {
             if (error) throw error;
+            console.log(results);
             callback(results);
         });
     })

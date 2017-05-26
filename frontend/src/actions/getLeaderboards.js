@@ -2,8 +2,8 @@ import axios from 'axios';
 
 import { GET_TEAM_LEADERBOARD, GET_PLAYER_LEADERBOARD } from './index';
 
-export function getTeamLeaderboard(values){
-    const request = axios.get(`http://localhost:3000/readAllDoubles`);
+export function getTeamLeaderboard(){
+    const request = axios.get('http://localhost:3000/readAllDoubles');
 
     return {
         type: GET_TEAM_LEADERBOARD,
@@ -11,8 +11,8 @@ export function getTeamLeaderboard(values){
     }
 }
 
-export function getPlayerLeaderboard(values){
-    const request = axios.get(`http://localhost:3000/readAllSingles`);
+export function getPlayerLeaderboard(){
+    const request = axios.get('http://localhost:3000/readAllSingles');
 
     return {
         type: GET_PLAYER_LEADERBOARD,

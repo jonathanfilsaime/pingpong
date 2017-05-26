@@ -4,11 +4,8 @@ const INITIAL_STATE = [];
 
 export default function(state = INITIAL_STATE, action) {
     switch(action.type) {
-        case GET_PLAYER_LEADERBOARD + 'FULFILLED':
-            return [...state, action.payload.data];
-            break;
-        case GET_PLAYER_LEADERBOARD + 'REJECTED':
-            return [{name: "Couldn't retrieve data", wins: "-"}];
+        case `${GET_PLAYER_LEADERBOARD}_FULFILLED`:
+            return action.payload.data;
             break;
         default:
             return state;
