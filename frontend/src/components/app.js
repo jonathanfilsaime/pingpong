@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom'
 
 import Toolbar from './toolbar';
 import Banner from './banner';
-import Leaderboard from '../containers/leaderboard';
+import Leaderboard from '../containers/leaderboard_container';
 import AddTeam from './add_team';
 import AddPlayer from './add_player';
 

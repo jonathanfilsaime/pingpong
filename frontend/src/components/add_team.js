@@ -21,6 +21,7 @@ class AddTeam extends Component {
 
     onSubmit(values){
         this.props.addTeam(values);
+
     }
 
     render() {
