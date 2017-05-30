@@ -4,6 +4,15 @@ import '../../style/leaderboard.css';
 
 class Leaderboard extends Component {
 
+    constructor(props) {
+        super(props);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    onSubmit(name, wins) {
+        this.props.addWin(name, wins);
+    }
+
     renderColumnHeadings(column_titles) {
         return column_titles.map((title) => {
             return (
@@ -24,7 +33,7 @@ class Leaderboard extends Component {
                         <td>{team.Name}</td>
                         <td>{team.Wins}</td>
                         <td>
-                            <button className="leaderboard-button">+</button>
+                            <button onClick={this.onSubmit.bind(this, team.Name, team.Wins)} className="leaderboard-button">+</button>
                         </td>
                     </tr>
                 );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { getPlayerLeaderboard, getTeamLeaderboard } from '../actions/getLeaderboards';
-import { addWin } from '../actions/addWin';
+import { addPlayerWin, addTeamWin } from '../actions/addWin';
 
 import Leaderboard from '../components/leaderboard';
 
@@ -21,12 +21,14 @@ class LeaderboardContainer extends Component {
                     <Leaderboard
                         columnHeadings={["Team", "Wins", ""]}
                         tableData={this.props.teamLeaderboard}
+                        addWin={this.props.addTeamWin}
                     />
                 </div>
                 <div className="player-leaderboard">
                     <Leaderboard
                         columnHeadings={["Player", "Wins", ""]}
                         tableData={this.props.playerLeaderboard}
+                        addWin={this.props.addPlayerWin}
                     />
                 </div>
             </div>
@@ -41,4 +43,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {getPlayerLeaderboard, getTeamLeaderboard, addWin})(LeaderboardContainer);
+export default connect(mapStateToProps, {getPlayerLeaderboard, getTeamLeaderboard, addPlayerWin, addTeamWin})(LeaderboardContainer);
