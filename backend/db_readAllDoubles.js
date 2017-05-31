@@ -12,7 +12,7 @@ module.exports = function read(callback)
             if (error) throw error;
 
             connection.release();
-            
+
             callback(results);
         });
     })
