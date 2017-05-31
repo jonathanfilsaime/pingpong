@@ -3,7 +3,7 @@
  */
 var connection = require('./db_connection')
 
-module.exports = function read(callback, name)
+module.exports = function read(name, callback)
 {
     connection.getConnection(function (err, connection)
     {
