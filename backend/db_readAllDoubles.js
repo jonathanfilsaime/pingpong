@@ -10,7 +10,9 @@ module.exports = function read(callback)
         connection.query('SELECT * FROM doubles ORDER BY Wins DESC', function (error, results)
         {
             if (error) throw error;
-            console.log('result: ', results);
+
+            connection.release();
+            
             callback(results);
         });
     })

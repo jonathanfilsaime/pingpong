@@ -10,6 +10,4 @@ var connection = mysql.createPool({     // TODO export credentials to one place,
     database : 'pingpong'
 });
 
-
-
 module.exports = connection;

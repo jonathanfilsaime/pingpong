@@ -7,7 +7,6 @@ var createDoubleUser = require('./db_createDoubleUser');
 var updateSingles = require('./db_updateSingles');
 var updateDoubles = require('./db_updateDoubles');
 
-var test = require('./test');
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());

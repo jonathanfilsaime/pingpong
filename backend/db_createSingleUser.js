@@ -3,14 +3,15 @@
  */
 var connection = require('./db_connection')
 
-module.exports = function read(name, callback)
-{
+module.exports = function read(name, callback) {
     connection.getConnection(function (err, connection)
     {
         connection.query('INSERT INTO singles ( Name, Wins ) VALUES (' + '\"' +name + '\"' + ', 0 )', function (error, results)
         {
             if (error) throw error;
-            console.log('result: ', results);
+
+            connection.release();
+
             callback(results);
         });
     })
