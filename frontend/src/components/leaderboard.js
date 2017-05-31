@@ -6,6 +6,7 @@ class Leaderboard extends Component {
 
     constructor(props) {
         super(props);
+
         this.onSubmit = this.onSubmit.bind(this);
     }
 
@@ -24,7 +25,7 @@ class Leaderboard extends Component {
     renderRows(table_data) {
         if(table_data.length === 0){
             return (
-                <tr><td>Couldn't retrieve data</td><td>-</td><td></td></tr>
+                <tr><td>No data</td><td>-</td><td></td></tr>
             );
         } else {
             return table_data.map((team) => {
