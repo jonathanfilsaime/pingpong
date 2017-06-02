@@ -1,5 +1,6 @@
 var express = require('express');
 var path = require('path');
+var http = require('http');
 var app = express();
 var readAllSingles = require('./db_readAllSingles');
 var readAllDoubles = require('./db_readAllDoubles');
@@ -52,6 +53,6 @@ app.get('/readAllDoubles', function(req, res) {
     });
 });
 
-app.listen(3000, function(){
-    console.log('Listing on port: 3000');
+http.createServer(app).listen(8080	, function () {
+    console.log("Listening on port 8080");
 });
