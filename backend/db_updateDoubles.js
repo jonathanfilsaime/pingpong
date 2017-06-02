@@ -10,7 +10,7 @@ module.exports = function read(name, wins, callback) {
             function (error, results)
             {
                 if (error) throw error;
-
+                console.log(results);
                 connection.release();
 
                 callback(results);

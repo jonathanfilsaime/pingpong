@@ -7,11 +7,16 @@ class Leaderboard extends Component {
     constructor(props) {
         super(props);
 
-        this.onSubmit = this.onSubmit.bind(this);
+        this.addWin = this.addWin.bind(this);
+        this.subtractWin = this.subtractWin.bind(this);
     }
 
-    onSubmit(name, wins) {
+    addWin(name, wins) {
         this.props.addWin(name, wins);
+    }
+
+    subtractWin(name, wins){
+        this.props.subtractWin(name, wins);
     }
 
     renderColumnHeadings(column_titles) {
@@ -32,9 +37,12 @@ class Leaderboard extends Component {
                 return (
                     <tr key={team.Name}>
                         <td>{team.Name}</td>
+                        <td>
+                            <button onClick={this.subtractWin.bind(this, team.Name, team.Wins)} className="leaderboard-button">-</button>
+                        </td>
                         <td>{team.Wins}</td>
                         <td>
-                            <button onClick={this.onSubmit.bind(this, team.Name, team.Wins)} className="leaderboard-button">+</button>
+                            <button onClick={this.addWin.bind(this, team.Name, team.Wins)} className="leaderboard-button">+</button>
                         </td>
                     </tr>
                 );

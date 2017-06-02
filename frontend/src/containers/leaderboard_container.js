@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { getPlayerLeaderboard, getTeamLeaderboard, onSearchTextChange } from '../actions/getLeaderboards';
 import { addPlayerWin, addTeamWin } from '../actions/addWin';
+import { subtractPlayerWin, subtractTeamWin } from '../actions/subtractWin';
 
 import Leaderboard from '../components/leaderboard';
 
@@ -19,7 +20,6 @@ class LeaderboardContainer extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div>
                 <div className="search">
@@ -30,16 +30,18 @@ class LeaderboardContainer extends Component {
                 <div className="leaderboard">
                     <div className="team-leaderboard">
                         <Leaderboard
-                            columnHeadings={["Team", "Wins", ""]}
+                            columnHeadings={["Team", "", "Wins", " "]}
                             tableData={this.props.teamLeaderboard}
                             addWin={this.props.addTeamWin}
+                            subtractWin={this.props.subtractTeamWin}
                         />
                     </div>
                     <div className="team-leaderboard">
                         <Leaderboard
-                            columnHeadings={["Player", "Wins", ""]}
+                            columnHeadings={["Player", "", "Wins", " "]}
                             tableData={this.props.playerLeaderboard}
                             addWin={this.props.addPlayerWin}
+                            subtractWin={this.props.subtractPlayerWin}
                         />
                     </div>
                 </div>
@@ -68,5 +70,7 @@ export default connect(mapStateToProps,
         getTeamLeaderboard,
         getPlayerLeaderboard,
         addPlayerWin,
-        addTeamWin
+        addTeamWin,
+        subtractPlayerWin,
+        subtractTeamWin
     })(LeaderboardContainer);
