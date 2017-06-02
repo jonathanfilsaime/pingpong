@@ -53,7 +53,7 @@ app.get('/readAllDoubles', function(req, res) {
     });
 });
 
-app.get('/', function(req, res) {
+app.get('/index', function(req, res) {
     res.sendfile('/public/index.html', { root: __dirname });
 });
 
