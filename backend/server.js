@@ -16,6 +16,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(function(req, res, next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 app.post('/createSingleUser', function(req, res)
 {
     createSingleUser(req.body.name, function (result){
@@ -57,6 +63,6 @@ app.get('/index', function(req, res) {
     res.sendfile('/public/index.html', { root: __dirname });
 });
 
-http.createServer(app).listen(8080	, function () {
+http.createServer(app).listen(3000, function () {
     console.log("Listening on port 8080");
 });
