@@ -63,6 +63,6 @@ app.get('/index', function(req, res) {
     res.sendfile('/public/index.html', { root: __dirname });
 });
 
-http.createServer(app).listen(3000, function () {
+http.createServer(app).listen(8080, function () {
     console.log("Listening on port 8080");
 });
