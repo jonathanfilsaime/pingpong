@@ -9,5 +9,5 @@ var connection = mysql.createPool({     // TODO export credentials to one place,
     password : '',
     database : 'pingpong'
 });
-
+console.log(connection);
 module.exports = connection;
