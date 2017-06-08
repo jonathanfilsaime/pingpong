@@ -5,7 +5,7 @@ var mysql = require('mysql');
 
 var connection = mysql.createPool({     // TODO export credentials to one place, and pull from server!!
     host     : 'http://ec2-54-213-230-211.us-west-2.compute.amazonaws.com',
-    user     : 'ec2-user',
+    user     : 'root',
     password : '',
     database : 'pingpong'
 });
